@@ -1,0 +1,22 @@
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--primary-bg);
+  color: white;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center; */
+}
+
+.table {
+  width: 100vw;
+}
+.table > tbody {
+  width: 100vw;
+}
+
+.cell {
+  padding: 1vh;
+  font-weight: 300;
+}

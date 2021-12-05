@@ -1,0 +1,8 @@
+.container {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.container > th {
+  padding: 1vh;
+  font-weight: 300;
+}
