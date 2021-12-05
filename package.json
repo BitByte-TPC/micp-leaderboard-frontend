@@ -1,5 +1,5 @@
 {
-  "name": "cf-leaderboard",
+  "name": "micp-leaderboard-frontend",
   "private": true,
   "scripts": {
     "dev": "next dev",
