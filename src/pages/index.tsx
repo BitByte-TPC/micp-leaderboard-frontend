@@ -10,7 +10,7 @@ const Home: React.FC<{ results: resultType[] }> = ({ results }) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>CF Leaderboard</title>
+        <title>MICP Leaderboard</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Heading />
