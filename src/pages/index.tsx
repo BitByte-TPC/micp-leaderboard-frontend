@@ -10,7 +10,7 @@ const Home: React.FC<{ results: resultType[] }> = ({ results }) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>MICP Leaderboard</title>
+        <title>MICP Leaderboard | TPC</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Heading />
@@ -51,12 +51,22 @@ export async function getStaticProps() {
       b.currentRating - b.initialRating - (a.currentRating - a.initialRating)
     );
   });
+  let curRank = 1;
+  const map = new Map();
   for (let i = 0; i < members.length; i++) {
+    const tempScore = members[i].currentRating - members[i].initialRating;
+    let tempRank = curRank;
+    if (map.has(tempScore)) {
+      tempRank = map.get(tempScore);
+    } else {
+      map.set(tempScore, tempRank);
+    }
     arr.push({
-      rank: i + 1,
+      rank: tempRank,
       username: members[i].username,
-      score: members[i].currentRating - members[i].initialRating,
+      score: tempScore,
     });
+    curRank++;
   }
   return {
     props: {
