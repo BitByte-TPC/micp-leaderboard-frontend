@@ -4,6 +4,8 @@ A website to show current standings of most improved programmers of The Programm
 
 This repo is an SSG website to showcase the rankings.
 
+Backend repo: [link](https://github.com/Aksh-Bansal-dev/micp-leaderboard-backend)
+
 ## How it works?
 The backend uses **codeforces API** to get all members in the group along with their ratings. **FaunaDB** is used as the database 
 and the results are pushed to FaunaDB. FaunaDB provides a **GraphQL API** to interact with the data. 
