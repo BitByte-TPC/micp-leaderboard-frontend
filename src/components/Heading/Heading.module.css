@@ -1,10 +1,59 @@
 .container {
-  height: 8vh;
+  height: auto;
   width: 100vw;
-  background: #011b29;
+  background: transparent;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   font-weight: 700;
   font-size: 1.3rem;
+  color: var(--primary-font);
+  padding-block: 1rem;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  cursor: default;
+}
+
+.logo > span:nth-child(odd) {
+  color: var(--primary);
+}
+
+.logo > span:nth-child(even) {
+  color: var(--secondary);
+}
+
+.title > div:nth-child(2) {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: default;
+}
+
+.sideHead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tpcLogo {
+  width: auto;
+  height: 100%;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: invert(var(--filter-invert));
 }

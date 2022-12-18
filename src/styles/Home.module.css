@@ -2,7 +2,7 @@
   min-height: 100vh;
   width: 100vw;
   background: var(--primary-bg);
-  color: white;
+  color: #ffffff;
   /* display: flex;
   flex-direction: column;
   justify-content: start;
@@ -19,4 +19,13 @@
 .cell {
   padding: 1vh;
   font-weight: 300;
+}
+
+.rankSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-block: 2rem;
 }
