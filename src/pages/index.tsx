@@ -35,7 +35,7 @@ const Home: React.FC<{ results: resultType[] }> = ({ results }) => {
   );
 };
 
-export async function getServerSideProps( {req, res}:{req:NextApiRequest, res:NextApiResponse} )  {
+export async function getStaticProps()  {
   const response = await fetch(`${process.env.RANKLIST}`, {
     method: 'GET',
     mode: 'cors',
@@ -43,7 +43,6 @@ export async function getServerSideProps( {req, res}:{req:NextApiRequest, res:Ne
   })
 
   if(!response.ok) {
-    res.status(400).end()
     return {
       props: {}
     }
@@ -53,15 +52,11 @@ export async function getServerSideProps( {req, res}:{req:NextApiRequest, res:Ne
   const rankList = data.users
 
   if(data) {
-    res.setHeader(
-      'Cache-Control',
-      'public, s-maxage=259200, stale-while-revalidate=59' //Catch for 3 days (Vercel Edge Caching)
-    )
-    res.statusCode = 200
     return {
       props : {
         results : rankList
-      }
+      },
+      revalidate: 60*60*24*3 //3days in seconds
     }
   }
 }
