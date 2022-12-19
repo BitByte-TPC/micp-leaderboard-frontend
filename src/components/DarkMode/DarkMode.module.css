@@ -16,3 +16,33 @@
 .darkMode:hover {
   box-shadow: 0 0 0.5rem #e1e1e1;
 }
+
+@media screen and (max-width: 700px) {
+  .darkMode {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+
+@media screen and (max-width: 665px) {
+  .darkMode {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.75rem;
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .darkMode {
+    margin-left: 0;
+    margin-top: -1.5rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .darkMode {
+    margin-left: 0;
+    margin-top: -1.25rem;
+  }
+}

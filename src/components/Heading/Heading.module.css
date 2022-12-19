@@ -34,7 +34,7 @@
   color: var(--secondary);
 }
 
-.title > div:nth-child(2) {
+.subtitle {
   font-family: 'Poppins', sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
@@ -56,4 +56,86 @@
   justify-content: center;
   align-items: center;
   filter: invert(var(--filter-invert));
+}
+
+@media screen and (max-width: 975px) {
+  .subtitle {
+    font-size: 0.75rem;
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .container {
+    justify-content: center;
+    gap: 0rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    font-size: 1rem;
+    padding-inline: 5rem;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .container {
+    justify-content: center;
+  }
+
+  .sideHead {
+    flex-direction: column;
+    gap: 0rem;
+  }
+
+  .tpcLogo {
+    margin-top: -1.775rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .tpcLogo {
+    width: 6.5rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .logo {
+    font-size: 3.25rem;
+  }
+  .subtitle {
+    width: 16.5rem;
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .title {
+    translate: 1.25rem 0;
+  }
+  .logo {
+    font-size: 3rem;
+  }
+  .subtitle {
+    width: 16.5rem;
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .logo {
+    font-size: 3rem;
+  }
+  .subtitle {
+    width: 12.5rem;
+    font-size: 0.5rem;
+  }
 }

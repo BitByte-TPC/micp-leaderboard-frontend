@@ -15,7 +15,7 @@ const Heading: React.FC = () => {
             <span>C</span>
             <span>P</span>
         </div>
-        <div>Most Improved Competitive Programmer | Leaderboard</div>
+        <div className={styles.subtitle}>Most Improved Competitive Programmer | Leaderboard</div>
       </div>
       <div className={styles.sideHead}>
         <div className={styles.tpcLogo}>
