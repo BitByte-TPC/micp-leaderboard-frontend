@@ -1,33 +1,27 @@
 import React from "react";
 import styles from "./DarkMode.module.css";
 
+let prefersDark = false
+
 const DarkMode: React.FC = () => {
-  let storedTheme = "light"
-  let prefersDark = false
   const [theme, setTheme] = React.useState<string>('light')
 
   const setDark = () => {
-    localStorage.setItem("theme", "dark");
-    document.documentElement.setAttribute("data-theme", "dark");
+    document.documentElement.setAttribute("data-theme", "dark")
   }
   
   const setLight = () => {
-    localStorage.setItem("theme", "light");
-    document.documentElement.setAttribute("data-theme", "light");
+    document.documentElement.setAttribute("data-theme", "light")
   }
-  
-  React.useEffect(() => {
-    storedTheme = localStorage.getItem("theme")!;
-  }, [])
   
   if(typeof window !== 'undefined') {
     prefersDark =
     window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
+    window.matchMedia("(prefers-color-scheme: dark)").matches
   }
   
   const defaultDark =
-    storedTheme === "dark" || (storedTheme === null && prefersDark);
+    theme === "dark" || (theme === null && prefersDark)
   
   if (defaultDark) {
     setDark();

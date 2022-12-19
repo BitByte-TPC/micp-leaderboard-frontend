@@ -5,6 +5,7 @@ import TableHeadings from "../components/TableHeadings";
 import TableRow from "../components/TableRow";
 import { resultType } from "../utils/resultType";
 import React from "react";
+import { NextApiRequest, NextApiResponse } from 'next'
 
 const Home: React.FC<{ results: resultType[] }> = ({ results }) => {
 
@@ -34,14 +35,15 @@ const Home: React.FC<{ results: resultType[] }> = ({ results }) => {
   );
 };
 
-export async function getServerSideProps() {
-  const response = await fetch('https://micp-backend.onrender.com/api/rankList', {
+export async function getServerSideProps( {req, res}:{req:NextApiRequest, res:NextApiResponse} )  {
+  const response = await fetch(`${process.env.RANKLIST}`, {
     method: 'GET',
     mode: 'cors',
     headers: {'Content-type' : 'application/json'}
   })
 
   if(!response.ok) {
+    res.status(400).end()
     return {
       props: {}
     }
@@ -51,6 +53,11 @@ export async function getServerSideProps() {
   const rankList = data.users
 
   if(data) {
+    res.setHeader(
+      'Cache-Control',
+      'public, s-maxage=259200, stale-while-revalidate=59' //Catch for 3 days (Vercel Edge Caching)
+    )
+    res.statusCode = 200
     return {
       props : {
         results : rankList
