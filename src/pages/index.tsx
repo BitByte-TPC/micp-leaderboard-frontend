@@ -8,9 +8,6 @@ import React from "react";
 const Home: React.FC<{ results: resultType[] }> = ({ results }) => {
 
   results.sort((a, b) => b.score - a.score);
-  React.useEffect(() => {
-    console.log(results)
-  } ,[])
 
   return (
     <main className={styles.container}>
