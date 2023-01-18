@@ -1,16 +1,17 @@
 import React from "react";
-import { resultType } from "../../utils/resultType";
 import styles from "./TableRow.module.css";
 
 type propType = {
   username: string,
   score: number,
-  name: string,
-  currentRating:number,
+  ccId: string,
+  cfId: string,
+  ccRating:number,
+  cfRating:number,
   rank: number
 }
 
-const TableRow: React.FC<propType> = ({ username, score, name, currentRating, rank }) => {
+const TableRow: React.FC<propType> = ({ username, score, ccId, cfId, rank, cfRating, ccRating }) => {
   return (
     <div className={styles.cardWrapper}>
       <section className={styles.rank}>
@@ -19,8 +20,17 @@ const TableRow: React.FC<propType> = ({ username, score, name, currentRating, ra
         </span>
       </section>
       <section className={styles.userDetails}>
-        <span className={styles.userName}> {(!username) ? name: username} </span>
-        <span className={styles.userHandleandRating}> {`Name: ${(!name) ? 'N/A' : name} | Current Rating: ${currentRating}`}</span>
+        <div className={styles.userName}> {username} </div>
+        <div className={styles.userHandleandRating}>
+          <span className={styles.cc}>
+            <b>CodeChef&nbsp;</b>
+            {`Id: ${ccId} | Rating: ${ccRating}`}
+          </span>
+          <span className={styles.cf}>
+            <b>CodeForces&nbsp;</b>
+            {`Id: ${cfId} | Rating: ${cfRating}`}
+          </span>
+        </div>
       </section>
       <section className={styles.score}>
         <div className={styles.overlay} />

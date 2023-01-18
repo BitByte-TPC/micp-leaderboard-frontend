@@ -1,7 +1,11 @@
 export type resultType = {
   _id: number;
-  username: string;
+  codeChefId: string;
+  codeForcesId: string;
   score: number;
   currentRating: number,
-  name: string
+  name: string,
+  email: string,
+  ccCurrentRating: number,
+  cfCurrentRating: number
 };
