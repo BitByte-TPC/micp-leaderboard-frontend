@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Heading from "../components/Heading";
-import TableHeadings from "../components/TableHeadings";
 import TableRow from "../components/TableRow";
 import { resultType } from "../utils/resultType";
 import React from "react";
@@ -9,6 +8,9 @@ import React from "react";
 const Home: React.FC<{ results: resultType[] }> = ({ results }) => {
 
   results.sort((a, b) => b.score - a.score);
+  React.useEffect(() => {
+    console.log(results)
+  } ,[])
 
   return (
     <main className={styles.container}>
@@ -23,10 +25,12 @@ const Home: React.FC<{ results: resultType[] }> = ({ results }) => {
           <TableRow
             key={i}
             rank={i+1}
-            username={e.username}
-            name={e.name}
+            username={e.name}
+            ccId={e.codeChefId}
+            cfId={e.codeForcesId}
             score={e.score}
-            currentRating={e.currentRating}
+            ccRating={e.ccCurrentRating}
+            cfRating={e.cfCurrentRating}
           />
         ))}
       </section>

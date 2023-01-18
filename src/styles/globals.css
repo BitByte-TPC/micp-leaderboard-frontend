@@ -11,6 +11,7 @@
   --secondary-bg: #e0fbfc;
   --filter-invert: 1;
   --shadow-color: #e8e8e8;
+  --select-color: #ffffff;
 }
 
 [data-theme="dark"] {
@@ -22,6 +23,7 @@
   --secondary-bg: #37474f;
   --filter-invert: 0;
   --shadow-color: #c1c8e4;
+  --select-color: #8860d0;
 }
 
 html,
