@@ -5,7 +5,6 @@ import TableHeadings from "../components/TableHeadings";
 import TableRow from "../components/TableRow";
 import { resultType } from "../utils/resultType";
 import React from "react";
-import { NextApiRequest, NextApiResponse } from 'next'
 
 const Home: React.FC<{ results: resultType[] }> = ({ results }) => {
   return (
