@@ -1,17 +1,16 @@
 import React from "react";
+import { resultType } from "../../utils/resultType";
 import styles from "./TableRow.module.css";
 
 type propType = {
   username: string,
   score: number,
-  ccId: string,
-  cfId: string,
-  ccRating:number,
-  cfRating:number,
+  name: string,
+  currentRating:number,
   rank: number
 }
 
-const TableRow: React.FC<propType> = ({ username, score, ccId, cfId, rank, cfRating, ccRating }) => {
+const TableRow: React.FC<propType> = ({ username, score, name, currentRating, rank }) => {
   return (
     <div className={styles.cardWrapper}>
       <section className={styles.rank}>
@@ -20,17 +19,8 @@ const TableRow: React.FC<propType> = ({ username, score, ccId, cfId, rank, cfRat
         </span>
       </section>
       <section className={styles.userDetails}>
-        <div className={styles.userName}> {username} </div>
-        <div className={styles.userHandleandRating}>
-          <span className={styles.cc}>
-            <b>CodeChef&nbsp;</b>
-            {`Id: ${ccId} | Rating: ${ccRating}`}
-          </span>
-          <span className={styles.cf}>
-            <b>CodeForces&nbsp;</b>
-            {`Id: ${cfId} | Rating: ${cfRating}`}
-          </span>
-        </div>
+        <span className={styles.userName}> {(!username) ? name: username} </span>
+        <span className={styles.userHandleandRating}> {`Name: ${(!name) ? 'N/A' : name} | Current Rating: ${currentRating}`}</span>
       </section>
       <section className={styles.score}>
         <div className={styles.overlay} />

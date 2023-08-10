@@ -40,7 +40,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 0.5rem;
 }
 
 .userName {
@@ -48,7 +47,6 @@
   text-transform: capitalize;
   font-size: 1.5rem;
   font-family: 'Roboto', sans-serif;
-  font-weight: 600;
   cursor: default;
 }
 
@@ -58,25 +56,6 @@
   font-size: 0.75rem;
   font-family: 'Roboto', sans-serif;
   cursor: default;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 0.25rem;
-  flex-wrap: wrap;
-}
-
-.cc, .cf {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  font-size: 0.75rem;
-  font-family: 'Roboto', sans-serif;
-  border-radius: 0.25rem;
-  outline: none;
-  color: var(--primary-font);
-  vertical-align: top;
 }
 
 .score {
