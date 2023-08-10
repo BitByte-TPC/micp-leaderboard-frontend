@@ -1,7 +1,5 @@
 export type resultType = {
-  _id: number;
+  rank: number;
   username: string;
   score: number;
-  currentRating: number,
-  name: string
 };
